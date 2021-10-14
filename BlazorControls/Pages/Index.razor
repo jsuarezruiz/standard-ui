@@ -6,15 +6,14 @@
 
 <h1>Standard UI</h1>
 
-Standard Rectangle:
-
-<BECanvas Width="300" Height="400" @ref="_canvasReference" ></BECanvas>
+<BECanvas Width="500" Height="500" @ref="_canvasReference" ></BECanvas>
 
 @code
 {
     private BECanvasComponent _canvasReference;
     private BlazorVisualEnvironment visualEnvironment;
-     private Canvas2DContext _context;
+    private Canvas2DContext _context;
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         _context = await _canvasReference.CreateCanvas2DAsync();
@@ -23,5 +22,4 @@ Standard Rectangle:
         
         visualEnvironment.CreateDrawingContext(cullingRect).DrawRectangle(null);
     }
-
 }

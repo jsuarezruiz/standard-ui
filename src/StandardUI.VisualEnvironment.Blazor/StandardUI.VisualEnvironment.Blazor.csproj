@@ -12,6 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\samples\Microcharts\Microcharts.csproj" />
 	  <ProjectReference Include="..\StandardUI\StandardUI.csproj" />
 	</ItemGroup>
 

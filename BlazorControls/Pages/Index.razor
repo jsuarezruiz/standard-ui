@@ -1,0 +1,27 @@
+﻿@page "/"
+@using Blazor.Extensions
+@using Blazor.Extensions.Canvas.Canvas2D
+@using Microsoft.StandardUI
+@using StandardUI.VisualEnvironment.Blazor
+
+<h1>Standard UI</h1>
+
+Standard Rectangle:
+
+<BECanvas Width="300" Height="400" @ref="_canvasReference" ></BECanvas>
+
+@code
+{
+    private BECanvasComponent _canvasReference;
+    private BlazorVisualEnvironment visualEnvironment;
+     private Canvas2DContext _context;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        _context = await _canvasReference.CreateCanvas2DAsync();
+        visualEnvironment = new BlazorVisualEnvironment(_context);
+        Rect cullingRect = new Rect(0, 0, 200, 200);
+        
+        visualEnvironment.CreateDrawingContext(cullingRect).DrawRectangle(null);
+    }
+
+}

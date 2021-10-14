@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30204.135
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31808.319
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StandardUI", "src\StandardUI\StandardUI.csproj", "{752F4208-8318-4C57-9868-9921FF743AA9}"
 EndProject
@@ -19,7 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StandardUI.VisualEnvironmen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleControls", "samples\SimpleControls\SimpleControls.csproj", "{2A1EDFC0-2865-4DC8-A232-6D2CCB7FA7E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardUI.VisualEnvironment.WpfNative", "src\StandardUI.VisualEnvironment.WpfNative\StandardUI.VisualEnvironment.WpfNative.csproj", "{EFFB0DA0-82FB-4075-B5E1-4E9A73C2491D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StandardUI.VisualEnvironment.WpfNative", "src\StandardUI.VisualEnvironment.WpfNative\StandardUI.VisualEnvironment.WpfNative.csproj", "{EFFB0DA0-82FB-4075-B5E1-4E9A73C2491D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardUI.VisualEnvironment.Blazor", "src\StandardUI.VisualEnvironment.Blazor\StandardUI.VisualEnvironment.Blazor.csproj", "{540A6007-9314-4790-AF2D-89DE5D47F9EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorControls", "BlazorControls\BlazorControls.csproj", "{D226E962-604F-4462-8FFA-D4F2C117DF03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,14 @@ Global
 		{EFFB0DA0-82FB-4075-B5E1-4E9A73C2491D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFFB0DA0-82FB-4075-B5E1-4E9A73C2491D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFFB0DA0-82FB-4075-B5E1-4E9A73C2491D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540A6007-9314-4790-AF2D-89DE5D47F9EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540A6007-9314-4790-AF2D-89DE5D47F9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540A6007-9314-4790-AF2D-89DE5D47F9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540A6007-9314-4790-AF2D-89DE5D47F9EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D226E962-604F-4462-8FFA-D4F2C117DF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D226E962-604F-4462-8FFA-D4F2C117DF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D226E962-604F-4462-8FFA-D4F2C117DF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D226E962-604F-4462-8FFA-D4F2C117DF03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +79,7 @@ Global
 		{EE5B826C-4409-4566-ABA1-9081ED5FF3E4} = {9B71283D-A4A6-480E-9A9B-AD446F08CCC5}
 		{6947DA6C-110C-4175-A38A-030F33CA3420} = {9B71283D-A4A6-480E-9A9B-AD446F08CCC5}
 		{2A1EDFC0-2865-4DC8-A232-6D2CCB7FA7E2} = {9B71283D-A4A6-480E-9A9B-AD446F08CCC5}
+		{D226E962-604F-4462-8FFA-D4F2C117DF03} = {9B71283D-A4A6-480E-9A9B-AD446F08CCC5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5981247F-FDA6-460F-8B83-6AFBEE114226}

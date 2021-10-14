@@ -14,6 +14,7 @@ namespace StandardUI.CodeGenerator
         public abstract QualifiedNameSyntax RootNamespace { get; }
         public abstract TypeSyntax DestinationTypeForUIElementAttachedTarget { get; }
         public abstract string? DefaultBaseClassName { get; }
+        public abstract string DefaultUIElementBaseClassName { get; }
         public abstract IEnumerable<NameSyntax> GetUsings(bool hasPropertyDescriptors, bool hasTypeConverterAttribute);
         public abstract bool EmitChangedNotifications { get; }
     }
@@ -37,6 +38,7 @@ namespace StandardUI.CodeGenerator
         public override string DependencyPropertyClassName => "System.Windows.DependencyProperty";
         public override TypeSyntax DestinationTypeForUIElementAttachedTarget => QualifiedName(SystemWindows, IdentifierName("UIElement"));
         public override string? DefaultBaseClassName => "StandardUIDependencyObject";
+        public override string DefaultUIElementBaseClassName => "StandardUIFrameworkElement";
         public override string WrapperSuffix => "Wpf";
 
         public override IEnumerable<NameSyntax> GetUsings(bool hasPropertyDescriptors, bool hasTypeConverterAttribute)
@@ -69,6 +71,7 @@ namespace StandardUI.CodeGenerator
         public override string DependencyPropertyClassName => "DependencyProperty";
         public override TypeSyntax DestinationTypeForUIElementAttachedTarget => IdentifierName("UIElement");
         public override string? DefaultBaseClassName => "StandardUIDependencyObject";
+        public override string DefaultUIElementBaseClassName => "StandardUIUIElement";
         public override string WrapperSuffix => "Uwp";
         public override IEnumerable<NameSyntax> GetUsings(bool hasPropertyDescriptors, bool hasTypeConverterAttribute)
         {
@@ -80,12 +83,13 @@ namespace StandardUI.CodeGenerator
     {
         public static readonly XamarinFormsXamlOutputType Instance = new XamarinFormsXamlOutputType();
 
-        public override string ProjectBaseDirectory => Path.Combine("XamarinForms", "StandardUI.XamarinForms");
+        public override string ProjectBaseDirectory => "StandardUI.XamarinForms";
         public override QualifiedNameSyntax RootNamespace => QualifiedName(MicrosoftStandardUI, IdentifierName("XamarinForms"));
         public override string DependencyPropertyClassName => "BindableProperty";
         public override TypeSyntax DestinationTypeForUIElementAttachedTarget => IdentifierName("VisualElement");
         public override string? DefaultBaseClassName => "BindableObject";
-        public override string WrapperSuffix => "Forms";
+        public override string DefaultUIElementBaseClassName => "StandardUIView";
+        public override string WrapperSuffix => "XamarinForms";
 
         public override IEnumerable<NameSyntax> GetUsings(bool hasPropertyDescriptors, bool hasTypeConverterAttribute)
         {
@@ -103,6 +107,7 @@ namespace StandardUI.CodeGenerator
         public override QualifiedNameSyntax RootNamespace => QualifiedName(MicrosoftStandardUI, IdentifierName("StandardModel"));
         public override TypeSyntax DestinationTypeForUIElementAttachedTarget => IdentifierName("ObjectWithCascadingNotifications");
         public override string? DefaultBaseClassName => "ObjectWithCascadingNotifications";
+        public override string DefaultUIElementBaseClassName => "ObjectWithCascadingNotifications";
 
         public override IEnumerable<NameSyntax> GetUsings(bool hasPropertyDescriptors, bool hasTypeConverterAttribute)
         {

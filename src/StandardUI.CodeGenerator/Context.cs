@@ -108,7 +108,7 @@ namespace StandardUI.CodeGenerator
             else if (IsNonwrappedObjectType(typeName))
                 return identifierName;
             else if (typeName == "IUIElement")
-                return IdentifierName("StandardUIFrameworkElement");
+                return IdentifierName(OutputType.DefaultUIElementBaseClassName);
             else if (typeName.StartsWith("I"))
                 return IdentifierName(typeName.Substring(1));
             else

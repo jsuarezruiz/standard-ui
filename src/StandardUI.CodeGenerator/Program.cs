@@ -137,6 +137,7 @@ namespace StandardUI.CodeGenerator
 
                 Console.WriteLine($"Processing {intface.Identifier.Text}");
                 new Interface(new Context(workspace, rootDirectory, WpfXamlOutputType.Instance), intface, attachedInterface).Generate();
+                new Interface(new Context(workspace, rootDirectory, XamarinFormsXamlOutputType.Instance), intface, attachedInterface).Generate();
                 //new SourceFileGenerator(workspace, interfaceDeclaration, rootDirectory, XamarinFormsXamlOutputType.Instance).Generate();
                 //new SourceFileGenerator(workspace, interfaceDeclaration, rootDirectory, StandardModelOutputType.Instance).Generate();
             }

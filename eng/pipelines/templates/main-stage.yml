@@ -36,7 +36,7 @@ stages:
         msbuild StandardUI-Windows.sln /restore /p:Configuration=Release
       displayName: 'Build project'
 
-    - ${{ not(parameters.isPR) }}:
+    - ${{ if not(parameters.isPR) }}:
       - task: UseDotNet@2
         inputs:
           packageType: sdk

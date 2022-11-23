@@ -182,11 +182,23 @@ namespace Microsoft.StandardUI.SourceGenerator.UIFrameworks
                     ITypeSymbol type = specifiedDefaultValue.Type!;
                     ImmutableArray<ISymbol> enumMembers = type.GetMembers();
 
+                    // For enums, use the fully qualified type name by default, to avoid conflicts.
+                    // But for known Standard UI types, use the short type name in most cases to be
+                    // more concise. The only exception is standard UI types that have known conflicts
+                    // with UI framework type names.
+                    string fullTypeName = Utils.GetTypeFullName(type);
+                    string typeName = fullTypeName;
+                    if (fullTypeName.StartsWith("Microsoft.StandardUI"))
+                    {
+                        if (fullTypeName != "Microsoft.StandardUI.TextWrapping")
+                            typeName = type.Name;
+                    }
+
                     foreach (IFieldSymbol enumFieldMember in enumMembers)
                     {
                         object? enumFieldValue = enumFieldMember.ConstantValue;
                         if (enumFieldValue != null && enumFieldValue.Equals(value))
-                            return $"{type.Name}.{enumFieldMember.Name}";
+                            return $"{typeName}.{enumFieldMember.Name}";
                     }
 
                     throw new UserViewableException($"No symbol found in enum {type.Name} for value {enumValue}");

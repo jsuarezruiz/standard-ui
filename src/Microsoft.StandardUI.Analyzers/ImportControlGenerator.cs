@@ -79,6 +79,8 @@ namespace Microsoft.StandardUI.SourceGenerator
                     return new WinFormsUIFramework(context);
                 else if (assemblyName == "Microsoft.StandardUI.Blazor")
                     return new BlazorUIFramework(context);
+                else if (assemblyName == "Microsoft.StandardUI.Avalonia")
+                    return new AvaloniaUIFramework(context);
             }
 
             throw UserVisibleErrors.CouldNotIdentifyUIFramework();

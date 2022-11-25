@@ -121,6 +121,7 @@ namespace Microsoft.StandardUI.CommandLineSourceGenerator
             var macUIFramework = new MacUIFramework(context);
             var mauiUIFramework = new MauiUIFramework(context);
             var blazorUIFramework = new BlazorUIFramework(context);
+            var avaloniaUIFramework = new AvaloniaUIFramework(context);
 
             // Generate source for the various UI frameworks and shared source
             foreach (Interface intface in gatherInterfacesVisitor.Interfaces)
@@ -133,6 +134,7 @@ namespace Microsoft.StandardUI.CommandLineSourceGenerator
                 intface.Generate(macUIFramework);
                 intface.Generate(mauiUIFramework);
                 intface.Generate(blazorUIFramework);
+                intface.Generate(avaloniaUIFramework);
                 intface.GenerateExtensionsClass();
             }
 
